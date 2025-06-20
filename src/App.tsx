@@ -129,7 +129,7 @@ const SidebarLayout: React.FC = () => {
         <Box>
 
 
-          <tr ><td  style={{width:"7%",paddingLeft:"5px", fontSize: "2rem"}} >  <div onClick={() => setIsExpanded(!isExpanded)} style={{ width: '30px',
+          <tr  ><td  style={{alignContent:"center", height:"30px",width:"4%",paddingLeft:"7px", fontSize: "2rem"}} >  <div onClick={() => setIsExpanded(!isExpanded)} style={{ width: '30px',
     height: '30px',
     backgroundImage: `url(${myButtonImage})`,
     backgroundSize: 'contain',
@@ -139,7 +139,7 @@ const SidebarLayout: React.FC = () => {
     cursor: 'pointer',
     borderRadius:"100%"}} >  </div>
             
-             </td><td onClick={() => setIsExpanded(!isExpanded)} className="hov" style={{fontSize:"34px",paddingLeft:"10px"}}>Kapstan </td> </tr>
+             </td><td onClick={() => setIsExpanded(!isExpanded)} className="hov" style={{fontSize:"24px",paddingLeft:"10px",height:"30px"}}>Kapstan </td> </tr>
           <div >
         <Box sx={{ flexDirection: "column", marginTop: "0", display: "flex", position: "sticky", bottom: "0", overflow: "hidden" }}>
 
