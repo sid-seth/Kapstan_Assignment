@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Grid, IconButton, Box, Button } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
@@ -10,6 +11,8 @@ import HistoryOutlinedIcon from '@mui/icons-material/HistoryOutlined';
 import ReportProblemOutlinedIcon from '@mui/icons-material/ReportProblemOutlined';
 import DesktopWindowsOutlinedIcon from '@mui/icons-material/DesktopWindowsOutlined';
 import InsertLinkOutlinedIcon from '@mui/icons-material/InsertLinkOutlined';
+import Divider from '@mui/material/Divider';
+
 import KeyboardDoubleArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardDoubleArrowLeftOutlined';
 import "./style1.css";
 import Env from "./Environment"
@@ -126,20 +129,26 @@ const SidebarLayout: React.FC = () => {
         <Box>
 
 
-          <tr><td style={{ fontSize: "2rem", cursor: "auto" }}> <IconButton onClick={() => setIsExpanded(!isExpanded)} sx={{ color: "white" }}>
+          <tr><td style={{width:"4%", fontSize: "2rem", cursor: "auto" }}> <IconButton onClick={() => setIsExpanded(!isExpanded)} sx={{ color: "white" }}>
             <MenuIcon />
-          </IconButton>  </td><td>Kapstan </td> </tr>
+          </IconButton>  </td><td onClick={() => setIsExpanded(!isExpanded)} className="hov">Kapstan </td> </tr>
           <div >
+        <Box sx={{ flexDirection: "column", marginTop: "0", display: "flex", position: "sticky", bottom: "0", overflow: "hidden" }}>
+
             <ul >
+                <Divider/>
 
-              <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{ fontSize: "2rem", paddingLeft: "8px" }}>  <InsertLinkOutlinedIcon /> </td><td className="pd-lf" >Security </td> </tr> </li>
-              <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{ fontSize: "2rem", paddingLeft: "8px", cursor: "auto" }}> <AttachMoneyIcon /> </td><td className="pd-lf" >Application </td> </tr> </li>
-              <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{ fontSize: "2rem", paddingLeft: "8px" }}> <ShieldOutlinedIcon /> </td><td className="pd-lf" >Connection </td> </tr> </li>
-
-
-
-
+              <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{width:"2%", fontSize: "2rem", paddingLeft: "8px" }}>  <GridViewOutlinedIcon /> </td><td className="pd-lf" >Applications </td> </tr> </li>
+                <Divider/>
+              <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{ width:"2%",fontSize: "2rem", paddingLeft: "8px", overflow: "hidden" }}> <ShieldOutlinedIcon /> </td><td className="pd-lf" >Connection </td> </tr> </li>
+              <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{width:"2%", fontSize: "2rem", paddingLeft: "8px", cursor: "auto" }}> <AttachMoneyIcon /> </td><td className="pd-lf" >Cost</td> </tr> </li>
+              <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{width:"2%", fontSize: "2rem", paddingLeft: "8px" }}>  <InsertLinkOutlinedIcon /> </td><td className="pd-lf" >Security </td> </tr> </li>
+                <Divider/>
             </ul>
+        </Box>
+
+
+
 
 
           </div>
@@ -151,9 +160,12 @@ const SidebarLayout: React.FC = () => {
         <Box sx={{ flexDirection: "column", marginTop: "0", display: "flex", position: "sticky", bottom: "0", overflow: "hidden" }}>
           <ul>
 
-            <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{ fontSize: "2rem", paddingLeft: "8px", }}><BookmarkBorderOutlinedIcon /> </td><td className="pd-lf" >Admin </td> </tr> </li>
-            <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{ fontSize: "2rem", paddingLeft: "8px" }}><PersonOutlineOutlinedIcon /> </td><td className="pd-lf" >Docs </td> </tr> </li>
-            <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{ fontSize: "2rem", paddingLeft: "8px" }}><KeyboardDoubleArrowLeftOutlinedIcon /> </td><td className="pd-lf" >  </td> </tr> </li>
+            <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{ width:"2%",fontSize: "2rem", paddingLeft: "8px", }}><BookmarkBorderOutlinedIcon /> </td><td className="pd-lf" >Admin </td> </tr> </li>
+       
+            <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{ width:"2%",fontSize: "2rem", paddingLeft: "8px" }}><PersonOutlineOutlinedIcon /> </td><td className="pd-lf" >Docs </td> </tr> </li>
+                <Divider/>
+       
+            <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{width:"2%", fontSize: "2rem", paddingLeft: "8px" }}><KeyboardDoubleArrowLeftOutlinedIcon /> </td><td className="pd-lf" >  </td> </tr> </li>
 
           </ul>
         </Box>
