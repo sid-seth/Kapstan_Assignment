@@ -12,7 +12,7 @@ import ReportProblemOutlinedIcon from '@mui/icons-material/ReportProblemOutlined
 import DesktopWindowsOutlinedIcon from '@mui/icons-material/DesktopWindowsOutlined';
 import InsertLinkOutlinedIcon from '@mui/icons-material/InsertLinkOutlined';
 import Divider from '@mui/material/Divider';
-
+import myButtonImage from './assets/kapstan_logo.png';
 import KeyboardDoubleArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardDoubleArrowLeftOutlined';
 import "./style1.css";
 import Env from "./Environment"
@@ -129,9 +129,17 @@ const SidebarLayout: React.FC = () => {
         <Box>
 
 
-          <tr><td style={{width:"4%", fontSize: "2rem", cursor: "auto" }}> <IconButton onClick={() => setIsExpanded(!isExpanded)} sx={{ color: "white" }}>
-            <MenuIcon />
-          </IconButton>  </td><td onClick={() => setIsExpanded(!isExpanded)} className="hov">Kapstan </td> </tr>
+          <tr ><td  style={{width:"7%",paddingLeft:"5px", fontSize: "2rem"}} >  <div onClick={() => setIsExpanded(!isExpanded)} style={{ width: '30px',
+    height: '30px',
+    backgroundImage: `url(${myButtonImage})`,
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    border: 'none',
+    cursor: 'pointer',
+    borderRadius:"100%"}} >  </div>
+            
+             </td><td onClick={() => setIsExpanded(!isExpanded)} className="hov" style={{fontSize:"34px",paddingLeft:"10px"}}>Kapstan </td> </tr>
           <div >
         <Box sx={{ flexDirection: "column", marginTop: "0", display: "flex", position: "sticky", bottom: "0", overflow: "hidden" }}>
 
