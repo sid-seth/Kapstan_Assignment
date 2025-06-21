@@ -51,11 +51,11 @@ const SecondRow: React.FC<MainContent> = ({ item }) => {
   return (
 
 
-    <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", paddingTop: "10px",paddingRight:"30px",alignItems:"center" }}>
+    <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", paddingTop: "34px",paddingRight:"30px",alignItems:"center" }}>
 
-      <Box>
+      <Box sx={{fontSize:"24px"}}>
 
-        {item.name}
+       <b> {item.name}</b>
       </Box>
       <Box>
         <Button variant="outlined" color="success">
@@ -147,9 +147,9 @@ const SidebarLayout: React.FC = () => {
 
               <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{width:"2%", fontSize: "2rem", paddingLeft: "8px" }}>  <GridViewOutlinedIcon /> </td><td className="pd-lf" >Applications </td> </tr> </li>
                 <Divider/>
-              <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{ width:"2%",fontSize: "2rem", paddingLeft: "8px", overflow: "hidden" }}> <ShieldOutlinedIcon /> </td><td className="pd-lf" >Connection </td> </tr> </li>
+              <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{ width:"2%",fontSize: "2rem", paddingLeft: "8px", overflow: "hidden" }}> <InsertLinkOutlinedIcon /> </td><td className="pd-lf" >Connection </td> </tr> </li>
               <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{width:"2%", fontSize: "2rem", paddingLeft: "8px", cursor: "auto" }}> <AttachMoneyIcon /> </td><td className="pd-lf" >Cost</td> </tr> </li>
-              <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{width:"2%", fontSize: "2rem", paddingLeft: "8px" }}>  <InsertLinkOutlinedIcon /> </td><td className="pd-lf" >Security </td> </tr> </li>
+              <li onClick={() => setIsExpanded(!isExpanded)}> <tr><td style={{width:"2%", fontSize: "2rem", paddingLeft: "8px" }}> <ShieldOutlinedIcon />  </td><td className="pd-lf" >Security </td> </tr> </li>
                 <Divider/>
             </ul>
         </Box>
@@ -218,7 +218,7 @@ const SidebarLayout: React.FC = () => {
             <nav>
               <Grid container sx={{ flexDirection: { xs: "column", md: "row" } }}>
 
-                <Grid size={{ xs: 1.3, md: 1 }}>
+                <Grid size={{ xs: 1.3, md: 0.9 }}>
 
 
             
@@ -226,12 +226,12 @@ const SidebarLayout: React.FC = () => {
                     
               
                 </Grid>
-                <Grid size={{ xs: 3, md: 2 }}>
+                <Grid size={{ xs: 3, md: 1.78 }}>
 
-                  <Link to="/envvar"  style={{display:"flex"}}><HistoryOutlinedIcon />Environment Variables</Link>
+                  <Link to="/envvar"  style={{display:"flex",wordBreak:"break-all"}}><HistoryOutlinedIcon />Environment Variables</Link>
 
                 </Grid>
-                <Grid size={.8}>
+                <Grid size={.7}>
                   <Link to="/envvar" style={{display:"flex"}}><ReportProblemOutlinedIcon />Alerts</Link>
 
 
