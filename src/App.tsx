@@ -16,6 +16,9 @@ import KeyboardDoubleArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardDou
 import "./style1.css";
 import Env from "./Environment"
 import DynamicContentGrid from "./Dynamic_content_grid";
+import { Navigate } from "react-router-dom";
+
+
 
 import {
   BrowserRouter as Router,
@@ -24,6 +27,7 @@ import {
   Link,
 
 } from "react-router-dom";
+
 
 
 interface MainContent {
@@ -104,6 +108,10 @@ const SidebarLayout: React.FC = () => {
 
   const selectedItem = data.find((item) => item.id === selectedId) || data.find((item) => item.id === 1);
 
+
+
+
+   // Ensures it runs once selectedItem is ready
   const [isExpanded, setIsExpanded] = useState(false);
   return (
     <Grid container sx={{ height: { xs: "151vh", md: "100vh" }, boxSizing: "border-box", width: "100vw" }}>
@@ -232,12 +240,12 @@ const SidebarLayout: React.FC = () => {
 
                 </Grid>
                 <Grid size={.7}>
-                  <Link to="/envvar" style={{display:"flex"}}><ReportProblemOutlinedIcon />Alerts</Link>
+                  <Link to="/alert" style={{display:"flex"}}><ReportProblemOutlinedIcon />Alerts</Link>
 
 
                 </Grid>
                 <Grid size={"auto"}>
-                  <Link to="/envvar" style={{display:"flex"}}><HistoryOutlinedIcon />Event history</Link>
+                  <Link to="/history" style={{display:"flex"}}><HistoryOutlinedIcon />Event history</Link>
 
 
                 </Grid>
@@ -246,13 +254,19 @@ const SidebarLayout: React.FC = () => {
             <br />
           </Grid>
           <Routes>
+            <Route path="/" element={<Navigate to="/overview" replace />} />
+
             <Route
               path="/overview"
               element={<DynamicContentGrid selectedItem={selectedItem} />}
             />
             <Route path="/envvar" element={<Env />} />
+            <Route path="/alert" element={<Env />} />
+            <Route path="/history" element={<Env />} />
+
           </Routes>
         </Router>
+        
       </Grid>
 
     </Grid>
